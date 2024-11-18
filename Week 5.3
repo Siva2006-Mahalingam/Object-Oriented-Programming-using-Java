@@ -1,0 +1,32 @@
+class Moblie{
+    Moblie(){
+        System.out.println("Basic Mobile is Manufactured");
+    }
+}
+class CamaraMoblie extends Moblie{
+    CamaraMoblie(){
+        super();
+        System.out.println("Camera Mobile is Manufactured");
+    }
+   void newFeature(){
+        System.out.println("Camera Mobile with 5MG px");
+    }
+}
+class AndroidMoblie extends CamaraMoblie{
+    AndroidMoblie(){
+        super();
+        System.out.println("Android Mobile is Manufactured");
+        
+    }
+    void androidMoblie(){
+        System.out.println("Touch Screen Mobile is Manufactured");
+        
+    }
+}
+public class prog{
+    public static void main(String A[]){
+        AndroidMoblie a = new AndroidMoblie();
+        a.newFeature();
+        a.androidMoblie();
+    }
+}
