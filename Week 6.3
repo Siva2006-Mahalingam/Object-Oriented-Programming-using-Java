@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class WordProcessor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        int number = sc.nextInt();
+        String[] words = input.split(" ");
+        int pos1 = number / 10; 
+        int pos2 = number % 10; 
+        pos1--;
+        pos2--;
+        String result1 = processWord(words[pos1]);
+        String result2 = processWord(words[pos2]);
+        String result = result1 + " " + result2;
+        System.out.println(result);
+    }
+    private static String processWord(String word) {
+        int len = word.length();
+        int mid = len / 2;
+        String middleToBegin;
+        String middleToEnd;
+
+        if (len % 2 == 0) {
+            middleToBegin = new StringBuilder(word.substring(0, mid)).reverse().toString();
+            middleToEnd = word.substring(mid);
+        } else {
+            middleToBegin = new StringBuilder(word.substring(0, mid + 1)).reverse().toString();
+            middleToEnd = word.substring(mid);
+        }
+        return middleToBegin + middleToEnd;
+    }
+}
