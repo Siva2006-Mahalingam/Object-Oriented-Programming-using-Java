@@ -1,0 +1,47 @@
+import java.util.Scanner;
+interface Playable {
+    void play();
+}
+class Football implements Playable {
+    String name;
+    public Football(String name) {
+        this.name = name;
+    }
+    public void play() {
+        System.out.println(name + " is Playing football");
+    }
+}
+class Volleyball implements Playable {
+    String name;
+    public Volleyball(String name) {
+        this.name = name;
+    }
+    public void play() {
+        System.out.println(name + " is Playing volleyball");
+    }
+}
+class Basketball implements Playable {
+    String name;
+    public Basketball(String name) {
+        this.name = name;
+    }
+    public void play() {
+        System.out.println(name + " is Playing basketball");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String footballPlayerName = scanner.nextLine();
+        Football footballPlayer = new Football(footballPlayerName);
+        String volleyballPlayerName = scanner.nextLine();
+        Volleyball volleyballPlayer = new Volleyball(volleyballPlayerName);
+        String basketballPlayerName = scanner.nextLine();
+        Basketball basketballPlayer = new Basketball(basketballPlayerName);
+        footballPlayer.play();
+        volleyballPlayer.play();
+        basketballPlayer.play();
+
+        scanner.close();
+    }
+}
