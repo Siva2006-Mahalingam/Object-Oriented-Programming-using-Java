@@ -1,0 +1,38 @@
+class College
+{
+protected   String collegeName;
+
+public College(String collegeName) {
+    this.collegeName = collegeName;
+    
+    }
+
+public void admitted() {
+    System.out.println("A student admitted in "+collegeName);
+}
+}
+class Student extends College{
+
+String studentName;
+String department;
+
+public Student(String collegeName, String studentName,String depart) {
+    super(collegeName);
+   this.studentName = studentName;
+   this.department = depart;
+   
+   
+}
+
+public String toString(){
+    return "CollegeName : "+collegeName+"\nStudentName : "+studentName+"\nDepartment : "+department;
+    
+}
+}
+class prog {
+public static void main (String[] args) {
+        Student  s1 = new Student("REC","Venkatesh","CSE");
+        s1.admitted();
+        System.out.println(s1.toString()); 
+}
+}
