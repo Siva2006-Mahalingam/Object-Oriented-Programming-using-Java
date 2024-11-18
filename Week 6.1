@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class StringMergeSort {
+
+    public static String mergeAndSort(String input1, String input2) {
+        String concatenated = input1 + input2;
+        Set<Character> uniqueChars = new HashSet<>();
+        for (char ch : concatenated.toCharArray()) {
+            if (ch != ' ') {
+                uniqueChars.add(ch);
+            }
+        }
+        List<Character> sortedList = new ArrayList<>(uniqueChars);
+        Collections.sort(sortedList, Collections.reverseOrder());
+        StringBuilder result = new StringBuilder();
+        for (char ch : sortedList) {
+            result.append(ch);
+        }
+        return result.length() > 0 ? result.toString() : "null";
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input1 = scanner.nextLine();
+        String input2 = scanner.nextLine();
+        String result = mergeAndSort(input1, input2);
+        System.out.println(result);
+        scanner.close();
+    }
+}
