@@ -1,0 +1,25 @@
+import java.util.*;
+class prog{
+    public static void main(String a[]){
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i<n;i++){
+            arr[i] = scan.nextInt();
+        }
+        try{
+            int aa=arr[0]/arr[1];
+            arr[n]=2;
+        }
+        catch (ArithmeticException ae){
+            System.out.println(ae);
+        }
+        catch(ArrayIndexOutOfBoundsException op){
+            System.out.println(op);
+        }
+        finally{
+            System.out.print("I am always executed");
+        }
+        
+    }
+}
