@@ -1,0 +1,27 @@
+class prog {
+  public static void main(String[] args) {
+    int n = 82;
+    trynumber(n);
+    n = 37;
+    // call the trynumber(n);
+    trynumber(n);
+    
+    
+  }
+
+  public static void trynumber(int n) {
+    try {
+        //call the checkEvenNumber()
+        checkEvenNumber(n);
+      System.out.println(n + " is even.");
+    } catch (RuntimeException e) {
+      System.out.println("Error: " + e.getMessage());
+    }
+  }
+
+  public static void checkEvenNumber(int number) {
+    if (number % 2 != 0) {
+      throw new RuntimeException(number + " is odd.");
+    }
+  }
+}
