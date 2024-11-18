@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class DecodeString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String encoded = sc.nextLine();
+        System.out.println( decode(encoded));
+        sc.close();
+    }
+    public static String decode(String encoded) {
+        String[] zeroGroups = encoded.split("1");
+        StringBuilder decodedWord = new StringBuilder();
+        for (String group : zeroGroups) {
+            if (group.length() > 0) {
+                char letter = (char) ('Z' - (group.length() - 1));
+                decodedWord.append(letter);
+            }
+        }
+        return decodedWord.toString();
+    }
+}
